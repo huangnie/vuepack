@@ -10,7 +10,7 @@ const config = require('./config')
 
 if (config.electron) {
   // remove dist folder in electron mode
-  exec('rm -rf app/assets/')
+  exec('rm -rf app/dist/')
 } else {
   // remove dist folder in web app mode
   exec('rm -rf dist/')
@@ -25,7 +25,7 @@ base.output.filename = '[name].[chunkhash:8].js'
 // add webpack plugins
 base.plugins.push(
   new ProgressBarPlugin(),
-  new ExtractTextPlugin('styles.[contenthash:8].css'),
+  new ExtractTextPlugin('css/[name].[contenthash:8].css'),
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify('production')
   }),

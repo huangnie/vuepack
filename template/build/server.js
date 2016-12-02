@@ -16,7 +16,7 @@ webpackConfig.entry.client = [
 ]
 {{#electron}}
 
-webpackConfig.output.publicPath = `http://localhost:${port}/assets/`
+webpackConfig.output.publicPath = `http://localhost:${port}/`
 {{/electron}}
 
 const compiler = webpack(webpackConfig)

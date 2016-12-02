@@ -7,7 +7,7 @@ const _ = require('./utils')
 
 module.exports = {
   entry: {
-    client: './client/index.js'
+    client: './src/index.js'
   },
   output: {
     path: _.outputPath,
@@ -17,8 +17,8 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.vue', '.css', '.json'],
     alias: {
-      root: path.join(__dirname, '../client'),
-      components: path.join(__dirname, '../client/components')
+      root: path.join(__dirname, '../src'),
+      components: path.join(__dirname, '../src/components')
     }
   },
   module: {
@@ -37,10 +37,17 @@ module.exports = {
         loaders: ['babel']
       },
       {
-        test: /\.(ico|jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+        test: /\.(ico|jpg|png|gif)(\?.*)?$/,
         loader: 'file',
         query: {
-          name: 'static/media/[name].[hash:8].[ext]'
+          name: 'img/[name].[hash:8].[ext]'
+        }
+      },
+      {
+        test: /\.(eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+        loader: 'file',
+        query: {
+          name: 'font/[name].[hash:8].[ext]'
         }
       }
     ]
