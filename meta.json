@@ -31,10 +31,10 @@
     }
   },
   "filters": {
-    "client/components/*.vue": "!jsx",
-    "client/components/**/*.{js,css}": "jsx",
-    "client/views/*.vue": "!jsx",
-    "client/views/**/*.{js,css}": "jsx",
+    "src/components/*.vue": "!jsx",
+    "src/components/**/*.{js,css}": "jsx",
+    "src/views/*.vue": "!jsx",
+    "src/views/**/*.{js,css}": "jsx",
     "app/*": "electron",
     ".eslintrc": "eslint"
   },
